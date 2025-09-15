@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error - ATM</title>
+    <link rel="stylesheet" th:href="@{/css/atm.css}">
+</head>
+<body>
+<div class="container">
+    <h1>❌ Transaction Failed</h1>
+    <p th:if="${errorMessage}" th:text="${errorMessage}">⚠️ Unexpected error occurred.</p>
+    <a th:href="@{/atm}" class="back-btn">⬅ Go Back Home</a>
+</div>
+</body>
+</html>

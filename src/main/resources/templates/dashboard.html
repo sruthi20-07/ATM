@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/atm.css}">
+</head>
+<body>
+<div class="container">
+    <h1>🏦 ATM Dashboard</h1>
+    <p class="welcome">👋 Welcome, <b th:text="${user.name}"></b>!</p>
+
+    <div class="menu">
+        <a th:href="@{/atm/deposit}" class="btn">💵 Deposit</a>
+        <a th:href="@{/atm/withdraw}" class="btn">💳 Withdraw</a>
+        <a th:href="@{/atm/mini-statement}" class="btn">📜 Mini Statement</a>
+        <a th:href="@{/atm/balance}" class="btn">💰 Check Balance</a>
+    </div>
+
+    <!-- Use POST so Spring Security handles logout correctly -->
+    <form th:action="@{/atm/logout}" method="post">
+        <button type="submit" class="logout-btn">🚪 Logout</button>
+    </form>
+</div>
+</body>
+</html>
