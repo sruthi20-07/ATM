@@ -1,0 +1,10 @@
+server.port=8056
+
+spring.datasource.url=jdbc:mysql://localhost:3306/atm_db?useSSL=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=Sru_20_thi@2007
+
+sendgrid.api.key=dummy-local-key
+email.from.address=vindulasruthi20@gmail.com
+
+spring.security.user.password=local123

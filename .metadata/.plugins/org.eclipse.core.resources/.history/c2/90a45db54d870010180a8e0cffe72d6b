@@ -1,0 +1,26 @@
+package com.atm.controller;
+
+import com.atm.util.OTPSender;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Random;
+
+@RestController
+@RequestMapping("/api/otp")
+public class OtpController {
+
+    @Autowired
+    private OTPSender otpSender;
+
+    @PostMapping("/send")
+    public String sendOtp(@RequestParam String email) {
+        // generate random 6-digit OTP
+        String otp = String.valueOf(100000 + new Random().nextInt(900000));
+
+        // send mail
+        otpSender.sendOtpEmail(email, otp);
+
+        return "OTP sent to: " + email + " ✅ Your OTP: " + otp;
+    }
+}

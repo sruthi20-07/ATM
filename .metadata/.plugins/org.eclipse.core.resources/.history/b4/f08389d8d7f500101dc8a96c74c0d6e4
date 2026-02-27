@@ -1,0 +1,51 @@
+#-----------------------------
+#Server Settings
+#-----------------------------
+
+server.port=${PORT:8056}
+spring.application.name=ATM-Project
+
+#-----------------------------
+#Database Configuration (SAFE & DEPLOYABLE)
+#-----------------------------
+
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+#-----------------------------
+#Hibernate / JPA Settings
+#-----------------------------
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+
+#-----------------------------
+#SendGrid API Key
+#-----------------------------
+
+sendgrid.api.key=${SENDGRID_API_KEY}
+
+#-----------------------------
+#Custom Email Info
+#-----------------------------
+
+email.from.address=${EMAIL_FROM_ADDRESS}
+email.from.name=SBI ATM Service
+
+#-----------------------------
+#Spring Security
+#-----------------------------
+
+spring.security.user.name=${APP_USER:user}
+spring.security.user.password=${APP_PASSWORD}
+spring.security.user.roles=USER
+
+#-----------------------------
+#Logging
+#-----------------------------
+
+logging.level.org.springframework=INFO
+logging.level.com.atm=DEBUG

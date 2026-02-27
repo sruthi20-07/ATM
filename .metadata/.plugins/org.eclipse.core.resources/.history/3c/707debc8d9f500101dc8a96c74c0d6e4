@@ -1,0 +1,9 @@
+DB_URL=jdbc:mysql://localhost:3306/atm_db
+DB_USERNAME=root
+DB_PASSWORD=Sru_20_thi@2007
+
+SENDGRID_API_KEY=dummy
+
+EMAIL_FROM_ADDRESS=vindulasruthi20@gmail.com
+
+APP_PASSWORD=local123
