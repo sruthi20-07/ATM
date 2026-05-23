@@ -1,0 +1,362 @@
+/* ================================
+   ATM Banking Theme – Professional
+   ================================ */
+
+/* Global */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container / Card */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 20px;
+  color: #004aad;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Welcome text */
+.welcome {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Menu buttons */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Buttons / Links styled as buttons */
+.btn,
+.back-btn,
+.logout-btn {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #0077b6, #0096c7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover,
+.back-btn:hover {
+  background: linear-gradient(90deg, #005f8d, #0077b6);
+  transform: translateY(-2px);
+}
+
+/* Logout in red */
+.logout-btn {
+  background: linear-gradient(90deg, #d90429, #ef233c);
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg, #9d0208, #d90429);
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+input:focus {
+  border-color: #0077b6;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+}
+
+/* Balance highlight */
+.balance {
+  font-size: 22px;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+/* Tables (mini statement) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background: #0077b6;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+table tr:hover {
+  background: #e9f5ff;
+}
+
+/* Messages */
+.error {
+  color: #d90429;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.message {
+  color: #0077b6;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* ================================
+   Enhanced Client Validation UI
+   ================================ */
+
+/* Field wrapper + states */
+.field {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.field input {
+  width: 80%; /* matches your base inputs */
+}
+
+.field.valid input {
+  border: 2px solid #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, .25);
+  background-image: linear-gradient(to right, rgba(40, 167, 69, .08), rgba(40, 167, 69, 0));
+}
+
+.field.invalid input {
+  border: 2px solid #dc3545;
+  box-shadow: 0 0 8px rgba(220, 53, 69, .25);
+  background-image: linear-gradient(to right, rgba(220, 53, 69, .06), rgba(220, 53, 69, 0));
+}
+
+/* Hints under inputs */
+.hint {
+  font-size: 0.9rem;
+  margin-top: 6px;
+  min-height: 1.1em;
+  color: #6c757d;
+}
+.field.invalid .hint { color: #dc3545; }
+.field.valid .hint { color: #28a745; }
+
+/* Shake animation for errors */
+@keyframes atm-shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-6px); }
+  40%, 60% { transform: translateX(6px); }
+}
+.field.shake { animation: atm-shake 0.35s linear; }
+
+/* Prevent double submit + spinner */
+button.loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: atm-spin 0.8s linear infinite;
+  vertical-align: -2px;
+}
+@keyframes atm-spin { to { transform: rotate(360deg); } }
+
+/* Amount preview + OTP banner */
+.amt-preview {
+  margin-top: 6px;
+  font-size: .95rem;
+  color: #004aad;
+  font-weight: 600;
+}
+
+.otp-banner {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.otp-banner b { color: #5c4600; }
+
+/* OTP grid + progress dots */
+.otp-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+.otp-box {
+  width: 46px;
+  height: 52px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.otp-box:focus {
+  border-color: #0077b6;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 119, 182, .45);
+}
+.otp-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+.otp-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d0d7de;
+  transition: background .2s;
+}
+.otp-dots span.f { background: #0077b6; }
+
+/* Password strength bar + rules */
+.strengthbar {
+  width: 80%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 999px;
+  margin: 6px auto 4px;
+  overflow: hidden;
+}
+.strengthbar .bar {
+  height: 100%;
+  width: 0%;
+  transition: width .25s;
+}
+.strengthbar .bar[data-level="1"] { background: #dc3545; }
+.strengthbar .bar[data-level="2"] { background: #fd7e14; }
+.strengthbar .bar[data-level="3"] { background: #ffc107; }
+.strengthbar .bar[data-level="4"] { background: #17a2b8; }
+.strengthbar .bar[data-level="5"] { background: #28a745; }
+
+.pw-rules {
+  list-style: none;
+  padding: 0;
+  margin: 6px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  font-size: .9rem;
+  color: #6c757d;
+}
+.pw-rules li.ok { color: #28a745; }
+.pw-rules li::before { content: "⬜ "; }
+.pw-rules li.ok::before { content: "✅ "; }
+
+/* Toasts (slide-in notifications) */
+#toasts {
+  position: fixed;
+  right: 18px;
+  top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border-left: 5px solid #0077b6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+  padding: 10px 14px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all .25s;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast.success { border-left-color: #28a745; }
+.toast.error { border-left-color: #dc3545; }
+.toast .icon { font-size: 18px; }
+
+/* OTP confirmation modal (for > ₹10,000) */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.modal.show { display: flex; }
+.modal .panel {
+  width: min(520px, 90vw);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, .25);
+  padding: 18px;
+  text-align: center;
+}
+.modal .panel h3 {
+  margin: 6px 0 14px;
+  color: #004aad;
+}
+.modal .actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.modal .actions .btn { min-width: 120px; }
