@@ -2019,3 +2019,6 @@ java.io.FileNotFoundException: C:\Users\SRUTHI\Documents\atm\.metadata\.plugins\
 2026-04-20 06:21:32,221 [Worker-10: Launching ATM-Project - AtmProjectApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRUTHI\Documents\atm\ATM-Project\src\test\resources
 2026-05-21 19:41:37,653 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2026-05-23 12:37:50,474 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2026-05-23 12:41:21,581 [Worker-6: Launching ATM-Project - AtmProjectApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-05-23 12:41:21,606 [Worker-6: Launching ATM-Project - AtmProjectApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2026-05-23 12:41:21,630 [Worker-6: Launching ATM-Project - AtmProjectApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRUTHI\Documents\atm\ATM-Project\src\test\resources
