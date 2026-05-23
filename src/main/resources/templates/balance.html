@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Balance</title>
+    <link rel="stylesheet" th:href="@{/css/atm.css}">
+</head>
+<body>
+<div class="container">
+    <h1>💰 Current Balance</h1>
+    <p class="balance">Your balance is: <b th:text="${balance}"></b> INR</p>
+    <a th:href="@{/atm/dashboard}" class="back-btn">⬅ Back to Dashboard</a>
+</div>
+</body>
+</html>

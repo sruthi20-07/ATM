@@ -1,0 +1,28 @@
+<!-- src/main/resources/templates/transaction-result.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction Result</title>
+  <link rel="stylesheet" th:href="@{/css/atm.css}">
+</head>
+<body>
+<div class="container">
+  <h1 th:if="${status}=='SUCCESS'">✅ Transaction Successful</h1>
+  <h1 th:if="${status}=='FAILED'">❌ Transaction Failed</h1>
+
+  <p th:if="${message}" th:text="${message}"></p>
+
+  <div th:if="${status}=='SUCCESS'">
+    <p><b>Name:</b> <span th:text="${user.name}"></span></p>
+    <p><b>Type:</b> <span th:text="${txnType}"></span></p>
+    <p><b>Amount:</b> ₹<span th:text="${amount}"></span></p>
+    <p><b>Balance:</b> ₹<span th:text="${balance}"></span></p>
+    <p><b>Date & Time:</b> <span th:text="${timestamp}"></span></p>
+    <p><b>Account Number:</b> <span th:text="${accountNumber}"></span></p>
+  </div>
+
+  <a th:href="@{/atm/dashboard}" class="back-btn">⬅ Back to Dashboard</a>
+</div>
+</body>
+</html>

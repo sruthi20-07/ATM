@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP - Withdraw</title>
+    <link rel="stylesheet" th:href="@{/css/atm.css}">
+</head>
+<body>
+<div class="container">
+    <h1>🔐 Verify Withdrawal OTP</h1>
+
+    <p th:if="${info}" class="message" th:text="${info}"></p>
+    <p th:if="${errorMessage}" class="error" th:text="${errorMessage}"></p>
+
+    <form th:action="@{/atm/verify-withdraw-otp}" method="post" data-form="otp-withdraw" novalidate>
+        <input type="hidden" name="amount" th:value="${amount}" />
+        <div class="field">
+            <div class="otp-grid"><!-- 6 boxes will be auto-created if not present --></div>
+            <input type="hidden" name="otp" />
+            <div class="hint" aria-live="polite"></div>
+        </div>
+        <button type="submit" class="btn" data-loading-text="Verifying…">Verify</button>
+    </form>
+
+    <a th:href="@{/atm/dashboard}" class="back-btn">⬅ Back</a>
+</div>
+
+<script th:src="@{/js/validate.js}"></script>
+</body>
+</html>
